@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display+SC:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Great+Vibes&family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi:wght@400;700&family=Cairo:wght@200;400;700&family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Playfair Display SC", serif;
+  --font-script: "Great Vibes", cursive;
+  --font-arabic-serif: "Amiri", serif;
+  --font-arabic-display: "Reem Kufi", sans-serif;
+  --font-luxury: "Cinzel", serif;
+  --font-accent: "Montserrat", sans-serif;
+  
+  --color-gold: #c5a044;
+  --color-champagne: #f7e7ce;
+  --color-pearl: #fdfbf7;
+  --color-rose-gold: #e5c1bd;
+  --color-royal-gold: #d4af37;
+  --color-cream-luxury: #fffdf9;
+  --color-ivory: #fffff0;
+}
+
+@layer base {
+  body {
+    @apply bg-pearl text-slate-800 antialiased overflow-x-hidden font-sans;
+  }
+}
+
+.luxury-card {
+  @apply bg-white/60 backdrop-blur-xl border border-white shadow-2xl;
+  box-shadow: 0 10px 40px rgba(212, 175, 55, 0.08);
+}
+
+.gold-text {
+  @apply text-royal-gold;
+  background: linear-gradient(to bottom, #d4af37 0%, #c5a044 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.arabic-glow {
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+}
+
+.arabesque-luxury {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0 C45 10 55 10 60 0 C65 10 65 20 60 30 C65 40 65 50 60 60 C55 50 45 50 40 60 C35 50 25 50 20 60 C15 50 15 40 20 30 C15 20 15 10 20 0 C25 10 35 10 40 0' fill='%23d4af37' fill-opacity='0.08'/%3E%3C/svg%3E");
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+@keyframes slow-zoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-slow-zoom {
+  animation: slow-zoom 20s ease-in-out infinite;
+}
